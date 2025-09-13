@@ -1,0 +1,26 @@
+.media-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.video-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.video-item {
+    flex: 1 0 45%; /* يجعل الفيديوهات تأخذ 45% من العرض */
+    max-width: 560px; /* حد أقصى لعرض الفيديو */
+}
+
+footer {
+    margin-top: 40px;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}

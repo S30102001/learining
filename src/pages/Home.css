@@ -1,0 +1,576 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.home {
+  width: 100%;
+  overflow-x: hidden;
+  background: #f3f7fa;
+  color: #333;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("/public/k.jpg")  no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(#6cacc042,#0f1a1f);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 90%;
+}
+
+.hero-content h3 {
+  font-size: clamp(16px, 4vw, 22px);
+  margin-bottom: 10px;
+}
+
+.hero-content h1 {
+  font-size: clamp(28px, 6vw, 60px);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+  color: #ffd700; /* Gold color */
+  font-weight: 700;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.hero-buttons .btn {
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: clamp(14px, 3vw, 16px);
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn-primary {
+  background: #0545a0;
+  color: #fff;
+}
+
+.btn-outline-light {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.hero-buttons .btn:hover {
+  transform: scale(1.05);
+}
+
+.floating-icon {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 40px;
+  color: #ffd700;
+}
+
+/* Sections */
+.about,
+.course,
+.consultation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 70px 5%;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.about-img img,
+.course-img img,
+.consultation-img img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.about-text,
+.course-text,
+.consultation-text {
+  max-width: 600px;
+  flex: 1;
+}
+
+/* Buttons */
+.btns {
+  margin-top: 20px;
+  background: #0545a0;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: background 0.3s;
+}
+
+.btns:hover {
+  background: #032b66;
+}
+
+/* Subscribe Section */
+.subscribe {
+  text-align: center;
+  padding: 80px 20px;
+  background: #f1f1f1;
+}
+
+.subscribe-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.subscribe-box input {
+  padding: 10px 15px;
+  border: 2px solid #0545a0;
+  border-radius: 25px 0 0 25px;
+  outline: none;
+}
+
+.subscribe-box button {
+  padding: 10px 20px;
+  border: none;
+  background: #0545a0;
+  color: #fff;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.subscribe-box button:hover {
+  background: #032b66;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about,
+  .course,
+  .consultation {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-img img,
+  .course-img img,
+  .consultation-img img {
+    margin: 0 auto;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(24px, 7vw, 50px);
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+        :root {
+            --primary-color: #4a6cf7;
+            --secondary-color: #6f42c1;
+            --accent-color: #ff6b6b;
+            --dark-color: #1d2a3a;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        section {
+            padding: 80px 5%;
+            overflow: hidden;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .about-img, .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .about-img img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .about-text h2 span {
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .about-text h2 span::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .about-text p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Buttons */
+        .btns {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(74, 108, 247, 0.3);
+        }
+
+        .btns:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(74, 108, 247, 0.4);
+        }
+
+        /* Clients Section */
+        .clients {
+            text-align: center;
+            background-color: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin: 40px 0;
+        }
+
+        .clients p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+        }
+
+        .clients-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .clients-logos img {
+            max-width: 150px;
+            height: auto;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .clients-logos img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        /* Course Section */
+        .course {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            background: linear-gradient(135deg, #f6f9ff 0%, #e9efff 100%);
+            border-radius: 20px;
+            padding: 60px 40px;
+        }
+
+        .course-text, .course-img {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .course-img img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .course-text p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Consultation Section */
+        .consultation {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin: 80px 0;
+        }
+
+        .consultation-img, .consultation-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .consultation-img img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .consultation-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .consultation-text p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Journey Section */
+        .journey {
+            background-color: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin: 40px 0;
+        }
+
+        .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .journey-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+
+        .journey-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .journey-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .journey-card h3 {
+            padding: 20px 20px 10px;
+            font-size: 1.2rem;
+            color: var(--dark-color);
+        }
+
+        .course-btn {
+            display: block;
+            width: calc(100% - 40px);
+            margin: 0 20px 20px;
+            padding: 10px;
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .course-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Subscribe Section */
+        .subscribe {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 80px 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+
+        .subscribe h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .subscribe p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+
+        .subscribe-box {
+            display: flex;
+            justify-content: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .subscribe-box input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .subscribe-box button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 0 50px 50px 0;
+            background: var(--accent-color);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .subscribe-box button:hover {
+            background: #ff5252;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about, .course, .consultation {
+                flex-direction: column;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .subscribe-box {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .subscribe-box input,
+            .subscribe-box button {
+                border-radius: 50px;
+                width: 100%;
+            }}
